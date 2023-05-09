@@ -7,6 +7,9 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import ValidationError
 from fastapi.responses import JSONResponse
 
+# первичная обкатка работы где не разделено по папкам
+# может слегка просто но при маштобирование будут проблемы
+
 app = FastAPI(
     title = "Magnitola")
 

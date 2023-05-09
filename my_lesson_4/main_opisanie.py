@@ -20,7 +20,7 @@
 # также ставим модули на питон
 # pip install sqlalchemy alembic psycopg2 - если винда в таком виде
 
-# создаем директороию моделями и питон файл моделямиp
+# создаем директороию моделями и питон файл модели
 # создали модели в папке моделс в терминале набираем
 # команду alembic init migrations
 
@@ -40,14 +40,23 @@
 
 
 
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     print('PyCharm')
 
+
+# ____________________________________________________________________
+# models
+# создаем модели вних прописывем те данные котрые мы будеам собирать
+# с user данные в будущем будут столбцами, данные из
+# пример
+# users =Table(
+#     "user",
+#     metadata,
+#     Column("id", Integer, primary_key=True),
+#     Column("email", String, nullable=False),
+# https://github.com/jeeand0305/my_site1.2/blob/master/models/models.py
+
+
+# при создание миграции применяем команду
+# проверяйте в каой директории вы работете
+# alembic init migrations

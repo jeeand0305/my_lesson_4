@@ -8,8 +8,8 @@ metadata = MetaData()
 # primary_key=True уникальное значение перыичный ключь
 # nullable=False означает что запрещено значение null, none
 
-roles = Table(
-    "roles",
+role = Table(
+    "role",
     metadata,
     Column("id", Integer, primary_key=True),
     Column("name", String, nullable=False),
@@ -19,17 +19,18 @@ roles = Table(
 # TIMESTAMP, default=datetime.utcnow это время когда была \
 # сделана регистрация
 # внешений ключь на таблицу id
-# "role_id" сылается на верхнию таблицу roles
+# "role_id" сылается на верхнию таблицу role
+# "password" hech пароль
 
-users =Table(
-    "users",
+user =Table(
+    "user",
     metadata,
     Column("id", Integer, primary_key=True),
     Column("email", String, nullable=False),
     Column("username", String, nullable=False),
     Column("password", String, nullable=False),
     Column("registered_at", TIMESTAMP, default=datetime.utcnow),
-    Column("role_id", Integer, ForeignKey("roles.id")),
+    Column("role_id", Integer, ForeignKey("role.id")),
 )
 
 # alembic init migrations применяем команду в терминале
